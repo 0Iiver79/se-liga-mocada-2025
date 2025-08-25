@@ -1,5 +1,6 @@
 import { Phone } from "lucide-react";
 import imgHero from "../../../public/imgHero.png";
+import raizesImg from "../../../public/raizes-removebg-preview.png";
 import Image from "next/image";
 
 export function Hero() {
@@ -15,11 +16,12 @@ export function Hero() {
           priority
           className="object-cover opacity-60 lg:hidden"
         ></Image>
+
+        <div className="absolute inset-0 bg-black opacity-40 md:hidden"></div>
       </div>
       <div className="container mx-auto pt-16 pb-16 md:pb-0 px-4 relative">
         <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
-          <div className="space-y-4">
-        
+          <div className="space-y-4 mb-5">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
               Se Liga Moçada
             </h1>
@@ -35,7 +37,7 @@ export function Hero() {
               {/* Botão Saiba Mais */}
               <a
                 href="#"
-                className="bg-[#8C4FA3] px-5 py-2 rounded-md font-semibold flex items-center justify-center w-fit"
+                className="bg-[#8C4FA3] px-5 py-2 rounded-md font-semibold flex items-center justify-center w-fit hover:bg-[#FF6F2D]"
               >
                 Saiba Mais
               </a>
@@ -43,12 +45,13 @@ export function Hero() {
               {/* Botão Denuncie com ícone */}
               <a
                 href="#"
-                className="bg-[#8C4FA3] px-5 py-2 rounded-md font-semibold flex items-center justify-center gap-2 w-fit"
+                className="bg-[#8C4FA3] px-5 py-2 rounded-md font-semibold flex items-center justify-center gap-2 w-fit hover:bg-[#FF6F2D]"
               >
                 <Phone className="text-white w-4 h-4" />
                 Denuncie
               </a>
             </div>
+            
           </div>
 
           <div className="hidden md:block h-full relative">
