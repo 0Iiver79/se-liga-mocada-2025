@@ -12,7 +12,7 @@ export function QuizzPage() {
     e.preventDefault();
 
     let score = 0;
-    let feedback = [];
+    const feedback = []; 
 
     if (q1 === "Controle excessivo") {
       score++;
