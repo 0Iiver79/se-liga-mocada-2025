@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "../../lib/LanguageContext";
+import { useTranslate } from "../../lib/useTranslate";
 
 export function About() {
   const slides = [
@@ -39,6 +41,15 @@ export function About() {
   ];
 
   const [current, setCurrent] = useState(0);
+  const { language } = useLanguage();
+  const { loading, translated, translate } = useTranslate();
+  const originalTitle = "Você sabe identificar um relacionamento abusivo?";
+
+  useEffect(() => {
+    if (language !== "pt") {
+      translate(originalTitle, language);
+    }
+  }, [language]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,7 +64,7 @@ export function About() {
   return (
     <section className="bg-[#F9F9FB] py-20 relative">
       <h1 className="text-3xl md:text-4xl font-bold text-center text-[#8C4FA3] mb-16">
-        Você sabe identificar um relacionamento abusivo?
+        {loading ? "Traduzindo..." : translated || originalTitle}
       </h1>
 
       <div className="container mx-auto relative flex flex-col lg:flex-row items-center gap-12">

@@ -4,6 +4,7 @@
 
 
 import { useState, useEffect, useRef } from "react";
+import { useLanguage } from "../../lib/LanguageContext";
 import Link from "next/link";
 import Image from "next/image";
 import logoFundo from "../../../public/LogocomFundo.png";
@@ -12,6 +13,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
+  const { language, setLanguage } = useLanguage();
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -68,11 +70,31 @@ export function Navbar() {
             Idiomas ▼
           </button>
           {langOpen && (
-            <ul className="absolute right-0 mt-2 w-40 bg-white text-[#1C1C1E] rounded shadow-lg z-50 flex flex-col">
-              <li><a href="#" className="block px-4 py-2 hover:bg-[#F3E8FF]">English</a></li>
-              <li><a href="#" className="block px-4 py-2 hover:bg-[#F3E8FF]">Deutsch</a></li>
-              <li><a href="#" className="block px-4 py-2 hover:bg-[#F3E8FF]">Italiano</a></li>
-              <li><a href="#" className="block px-4 py-2 hover:bg-[#F3E8FF]">中文</a></li>
+            <ul className="absolute right-0 mt-2 w-48 bg-white text-[#1C1C1E] rounded shadow-lg z-50 flex flex-col">
+              <li>
+                <button onClick={() => { setLanguage("en"); setLangOpen(false); }} className={`flex items-center gap-2 px-4 py-2 hover:bg-[#F3E8FF] w-full ${language==="en"?"bg-[#CC9AFC]":""}`}>
+                  <span className="inline-block w-5 h-5 rounded-full overflow-hidden border border-gray-300"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><rect width="640" height="480" fill="#00247d"/><rect width="640" height="160" y="160" fill="#fff"/><rect width="640" height="160" y="320" fill="#cf142b"/></svg></span>
+                  English
+                </button>
+              </li>
+              <li>
+                <button onClick={() => { setLanguage("es"); setLangOpen(false); }} className={`flex items-center gap-2 px-4 py-2 hover:bg-[#F3E8FF] w-full ${language==="es"?"bg-[#CC9AFC]":""}`}>
+                  <span className="inline-block w-5 h-5 rounded-full overflow-hidden border border-gray-300"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><rect width="640" height="480" fill="#c60b1e"/><rect width="640" height="160" y="160" fill="#ffc400"/><rect width="640" height="160" y="320" fill="#007a3d"/></svg></span>
+                  Español
+                </button>
+              </li>
+              <li>
+                <button onClick={() => { setLanguage("it"); setLangOpen(false); }} className={`flex items-center gap-2 px-4 py-2 hover:bg-[#F3E8FF] w-full ${language==="it"?"bg-[#CC9AFC]":""}`}>
+                  <span className="inline-block w-5 h-5 rounded-full overflow-hidden border border-gray-300"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><rect width="640" height="480" fill="#fff"/><rect width="640" height="160" y="160" fill="#008c45"/><rect width="640" height="160" y="320" fill="#cd212a"/></svg></span>
+                  Italiano
+                </button>
+              </li>
+              <li>
+                <button onClick={() => { setLanguage("ht"); setLangOpen(false); }} className={`flex items-center gap-2 px-4 py-2 hover:bg-[#F3E8FF] w-full ${language==="ht"?"bg-[#CC9AFC]":""}`}>
+                  <span className="inline-block w-5 h-5 rounded-full overflow-hidden border border-gray-300"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><rect width="640" height="480" fill="#f9e300"/><rect width="640" height="160" y="160" fill="#00a1de"/><rect width="640" height="160" y="320" fill="#ef3a3a"/></svg></span>
+                  Kreyòl Ayisyen
+                </button>
+              </li>
             </ul>
           )}
         </div>
@@ -119,11 +141,31 @@ export function Navbar() {
               Idiomas ▼
             </button>
             {langOpen && (
-              <ul className="mt-2 w-40 bg-white text-[#1C1C1E] rounded shadow-lg z-50 flex flex-col absolute">
-                <li><a href="#" className="block px-4 py-2 hover:bg-[#F3E8FF]">English</a></li>
-                <li><a href="#" className="block px-4 py-2 hover:bg-[#F3E8FF]">Deutsch</a></li>
-                <li><a href="#" className="block px-4 py-2 hover:bg-[#F3E8FF]">Italiano</a></li>
-                <li><a href="#" className="block px-4 py-2 hover:bg-[#F3E8FF]">中文</a></li>
+              <ul className="mt-2 w-48 bg-white text-[#1C1C1E] rounded shadow-lg z-50 flex flex-col absolute">
+                <li>
+                  <a href="#" className="flex items-center gap-2 px-4 py-2 hover:bg-[#F3E8FF]">
+                    <span className="inline-block w-5 h-5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><rect width="640" height="480" fill="#00247d"/><rect width="640" height="160" y="160" fill="#fff"/><rect width="640" height="160" y="320" fill="#cf142b"/></svg></span>
+                    English
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="flex items-center gap-2 px-4 py-2 hover:bg-[#F3E8FF]">
+                    <span className="inline-block w-5 h-5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><rect width="640" height="480" fill="#c60b1e"/><rect width="640" height="160" y="160" fill="#ffc400"/><rect width="640" height="160" y="320" fill="#007a3d"/></svg></span>
+                    Español
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="flex items-center gap-2 px-4 py-2 hover:bg-[#F3E8FF]">
+                    <span className="inline-block w-5 h-5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><rect width="640" height="480" fill="#fff"/><rect width="640" height="160" y="160" fill="#008c45"/><rect width="640" height="160" y="320" fill="#cd212a"/></svg></span>
+                    Italiano
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="flex items-center gap-2 px-4 py-2 hover:bg-[#F3E8FF]">
+                    <span className="inline-block w-5 h-5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><rect width="640" height="480" fill="#f9e300"/><rect width="640" height="160" y="160" fill="#00a1de"/><rect width="640" height="160" y="320" fill="#ef3a3a"/></svg></span>
+                    Kreyòl Ayisyen
+                  </a>
+                </li>
               </ul>
             )}
           </li>

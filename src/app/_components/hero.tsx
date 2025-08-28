@@ -1,12 +1,28 @@
+"use client";
+
 import { Phone } from "lucide-react";
 import imgHero from "../../../public/imgHero.png";
 import Image from "next/image";
+import Link from "next/link";
+import { useLanguage } from "../../lib/LanguageContext";
+import { useTranslate } from "../../lib/useTranslate";
+import { useEffect } from "react";
 
 export function Hero() {
+  const { language } = useLanguage();
+  const { loading, translated, translate } = useTranslate();
+  const originalText =
+    "Se liga, você não está sozinha. Informação e apoio contra relacionamentos abusivos.";
+
+  useEffect(() => {
+    if (language !== "pt") {
+      translate(originalText, language);
+    }
+  }, [language]);
+
   return (
     <section className="bg-[#F3E8FF] text-[#1C1C1E] relative overflow-hidden">
       <div>
-        {/* background responsivo com transparência */}
         <Image
           src={imgHero}
           alt="Imagem de uma mulher olhando para o horizonte"
@@ -15,7 +31,6 @@ export function Hero() {
           priority
           className="object-cover opacity-50 lg:hidden"
         />
-
         <div className="absolute inset-0 bg-black opacity-20 md:hidden"></div>
       </div>
 
@@ -26,21 +41,17 @@ export function Hero() {
               Se Liga Moçada
             </h1>
 
-            {/* Subtexto */}
             <p className="text-lg md:text-xl mb-8 text-[#6E6E73]">
-              Se liga, você não está sozinha. <br />
-              Informação e apoio contra relacionamentos abusivos.
+              {loading ? "Traduzindo..." : translated || originalText}
             </p>
 
-            {/* Botões (CTAs) */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               {/* Botão Saiba Mais */}
-              <a
-                href="#"
-                className="bg-[#8C4FA3] px-5 py-2 rounded-md font-semibold text-white flex items-center justify-center w-fit hover:bg-[#6B2C91] transition-colors"
-              >
-                Saiba Mais
-              </a>
+              <Link href="/ondebuscarajuda">
+                <button className="bg-[#8C4FA3] px-5 py-2 rounded-md text-white hover:bg-[#6B2C91] transition">
+                  Saiba Mais
+                </button>
+              </Link>
 
               {/* Botão Denuncie com ícone */}
               <a
@@ -53,7 +64,6 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Imagem lado direito */}
           <div className="hidden md:block h-full relative">
             <Image
               src={imgHero}
