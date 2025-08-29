@@ -4,10 +4,12 @@ import { OngCard } from "@/components/OngCard";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import Autoplay from "@/components/ui/autoplay";
 
+
 import React, { useState, useEffect } from "react";
+import type { UseEmblaCarouselType } from "embla-carousel-react";
 
 export function OngsCarousel() {
-  const [embla, setEmbla] = useState<any>(null);
+  const [embla, setEmbla] = useState<UseEmblaCarouselType[1] | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   // Atualiza o índice selecionado ao trocar slide

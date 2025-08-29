@@ -13,13 +13,13 @@ export const Pesquisa = () => (
         Isso nos faz pensar: o que todas essas notícias têm em comum? Todas elas foram vítimas!
       </p>
       <p className="mb-4 text-gray-700">
-        Atualmente, muito se julga as mulheres que continuam em relacionamentos com algum tipo de violência. O mais triste é saber que a maioria desses julgamentos vem de outras mulheres, que deveriam ser as primeiras a apoiar umas às outras. Quando notícias de feminicídio aparecem, as pessoas sentem dó, mas quando acontece perto de nós, o julgamento prevalece: frases como <span className="italic">"Se voltou é porque gosta", "mulher assim tem que apanhar mesmo"</span> são comuns. Na verdade, a permanência nesses relacionamentos está ligada a traumas, abuso psicológico e físico, dependência financeira e emocional, preocupação com filhos, falta de rede de apoio e passividade.
+        Atualmente, muito se julga as mulheres que continuam em relacionamentos com algum tipo de violência. O mais triste é saber que a maioria desses julgamentos vem de outras mulheres, que deveriam ser as primeiras a apoiar umas às outras. Quando notícias de feminicídio aparecem, as pessoas sentem dó, mas quando acontece perto de nós, o julgamento prevalece: frases como <span className="italic">&quot;Se voltou é porque gosta&quot;, &quot;mulher assim tem que apanhar mesmo&quot;</span> são comuns. Na verdade, a permanência nesses relacionamentos está ligada a traumas, abuso psicológico e físico, dependência financeira e emocional, preocupação com filhos, falta de rede de apoio e passividade.
       </p>
       <p className="mb-4 text-gray-700">
         Segundo pesquisa da RBTCC (2018), tópicos como esperança de mudança do parceiro, dependência financeira/emocional, preocupação com filhos e falta de apoio são recorrentes. Dados do Datafolha (2017) mostram que, em 2016, a cada hora, 503 mulheres sofreram agressão física, e em quase metade dos casos o agressor era o marido ou companheiro. Mesmo conhecendo a Lei Maria da Penha, muitas não tomam medidas após a agressão.
       </p>
       <p className="mb-4 text-gray-700">
-        O propósito do abuso é o controle. Muitos agressores não veem seu comportamento como errado, considerando-o "natural". Manipulam a vítima, fazendo-a acreditar que é culpada, perpetuando um ciclo psicológico devastador.
+        O propósito do abuso é o controle. Muitos agressores não veem seu comportamento como errado, considerando-o &quot;natural&quot;. Manipulam a vítima, fazendo-a acreditar que é culpada, perpetuando um ciclo psicológico devastador.
       </p>
       <div className="mb-4 bg-gray-100 p-4 rounded">
         <h4 className="font-semibold text-pink-700 mb-2">Relatos de vítimas:</h4>
@@ -32,7 +32,7 @@ export const Pesquisa = () => (
         </ul>
       </div>
       <p className="mb-4 text-gray-700">
-        Esses sentimentos não passam pela cabeça de quem julga. Segundo pesquisa do IPUSP, sinais de um relacionamento tóxico podem aparecer no início, muitas vezes mascarados como piadas ou "preocupação". O ciclo do relacionamento abusivo alterna entre tensão, violência e reconciliação.
+        Esses sentimentos não passam pela cabeça de quem julga. Segundo pesquisa do IPUSP, sinais de um relacionamento tóxico podem aparecer no início, muitas vezes mascarados como piadas ou &quot;preocupação&quot;. O ciclo do relacionamento abusivo alterna entre tensão, violência e reconciliação.
       </p>
       <div className="mb-4 bg-gray-100 p-4 rounded">
         <h4 className="font-semibold text-pink-700 mb-2">Ciclo do relacionamento abusivo (Lenore E. Walker):</h4>
@@ -46,7 +46,7 @@ export const Pesquisa = () => (
         Sinais de alerta incluem controle disfarçado de cuidado, ciúmes exagerado, manipulação emocional, isolamento, críticas constantes, comportamento possessivo e invasivo. Identificar esses sinais é fundamental para romper o ciclo abusivo.
       </p>
       <p className="mb-4 text-gray-700">
-        A sociedade muitas vezes romantiza a toxicidade, como em séries e casos reais, onde comportamentos abusivos são vistos como "prova de amor". Isso dificulta a identificação do abuso e perpetua o ciclo de violência.
+        A sociedade muitas vezes romantiza a toxicidade, como em séries e casos reais, onde comportamentos abusivos são vistos como &quot;prova de amor&quot;. Isso dificulta a identificação do abuso e perpetua o ciclo de violência.
       </p>
       <p className="mb-4 text-gray-700 font-semibold">
         Abaixo, você encontra um quiz que pode ajudar a refletir sobre sinais de relacionamentos tóxicos e abusivos.

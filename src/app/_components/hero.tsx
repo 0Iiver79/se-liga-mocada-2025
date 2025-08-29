@@ -70,7 +70,7 @@ export function Hero() {
 
 
             <p className="text-sm text-[#8C4FA3] max-w-xl mx-auto md:mx-0">
-              Ao clicar em "Denuncie", você será direcionado para o boletim online oficial do Governo Federal. Sua denúncia é sigilosa e pode salvar vidas. Não hesite em buscar ajuda!
+              Ao clicar em &quot;Denuncie&quot;, você será direcionado para o boletim online oficial do Governo Federal. Sua denúncia é sigilosa e pode salvar vidas. Não hesite em buscar ajuda!
             </p>
           </div>
 

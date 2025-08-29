@@ -4,7 +4,8 @@ import { Hero } from "./_components/hero";
 import { Navbar } from "./_components/navbar";
 import { QuizzPage } from "./_components/quizzpage";
 import { Pesquisa } from "./_components/pesquisa";
-import ContatosPage from "./contatos/page";
+
+import OngsPage from "./ongs/page";
 
 export default function Home(){
   return(
@@ -17,7 +18,7 @@ export default function Home(){
  
   
   {/* ONGs Carrossel */}
-  {require("./ongs/page").default()}
+  <OngsPage />
       {/* Seção de Contatos 
       <section id="contatos" className="w-full flex justify-center bg-white py-20">
         <div className="max-w-3xl w-full px-6">
