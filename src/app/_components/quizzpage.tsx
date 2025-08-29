@@ -148,19 +148,19 @@ const percentage = Math.round((currentBlock / totalBlocks) * 100);
 
 
   return (
-    <section className="bg-[#F9F9FB] py-20">
+  <section id="quizz" className="bg-[#F9F9FB] py-20">
       <h1 className="text-3xl md:text-4xl font-bold text-center text-[#8C4FA3] mb-8">
-        {loading ? "Traduzindo..." : translated || originalTitle}
+        Quizz: Você sabe identificar um relacionamento tóxico?
       </h1>
 
       <div className="container mx-auto relative flex flex-col lg:flex-row items-center gap-12">
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2 group">
           <Image
-            src="/quiz-image.jpg"
+            src="/quizzimg.jpg"
             alt="Quiz sobre relacionamentos abusivos"
             width={600}
             height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
+            className="w-full h-auto rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
           />
         </div>
 

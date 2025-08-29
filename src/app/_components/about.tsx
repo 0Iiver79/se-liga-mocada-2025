@@ -11,45 +11,54 @@ export function About() {
     {
       title: "Controle excessivo e ciúmes constantes",
       text: "Se o parceiro monitora suas ações, revisa suas mensagens ou demonstra ciúmes excessivos, isso é um sinal de controle abusivo.",
-      img: "/briga-casal.jpg"
+      img: "/aboutimgs/controleexcessivociúmesconstante .jpg"
     },
     {
       title: "Manipulação emocional e culpa",
       text: "Quando você se sente constantemente culpado(a) ou manipulado(a) emocionalmente para ceder aos desejos do outro, é um comportamento abusivo.",
-      img: "/briga-casal.jpg"
+      img: "/aboutimgs/manipulação emocional e culpa.jpg"
     },
     {
       title: "Agressões verbais ou humilhações",
       text: "Palavras ofensivas, insultos e humilhações frequentes são formas claras de abuso psicológico.",
-      img: "/briga-casal.jpg"
+      img: "/aboutimgs/agressõesverbaisehumilhação .jpg"
     },
     {
       title: "Isolamento social e limitação de amizades",
       text: "Tentar afastar você de amigos e familiares é uma forma de controle e abuso emocional.",
-      img: "/briga-casal.jpg"
+      img: "/aboutimgs/isolamentosocialelimitaçãodeamizades .jpg"
     },
     {
       title: "Negação de sentimentos e opiniões",
       text: "Se suas opiniões, sentimentos e vontades são constantemente desvalorizados ou ignorados, isso é abusivo.",
-      img: "/briga-casal.jpg"
+      img: "/aboutimgs/negação de sentimentos e opnião.jpg"
     },
     {
       title: "Empoderamento e autoafirmação",
       text: "É fundamental se impor, estabelecer limites e buscar apoio. Informação e assertividade são formas de proteção e autoestima.",
-      img: "/briga-casal.jpg"
+      img: "/aboutimgs/empoderamento e auto afirmaçao mulher feminino.jpg"
     }
   ];
 
   const [current, setCurrent] = useState(0);
   const { language } = useLanguage();
-  const { loading, translated, translate } = useTranslate();
+  const { loading: loadingTitle, translated: translatedTitle, translate: translateTitle } = useTranslate();
+  const { loading: loadingText, translated: translatedText, translate: translateText } = useTranslate();
   const originalTitle = "Você sabe identificar um relacionamento abusivo?";
 
+  // Traduz o título ao trocar idioma
   useEffect(() => {
     if (language !== "pt") {
-      translate(originalTitle, language);
+      translateTitle(originalTitle, language);
     }
   }, [language]);
+
+  // Traduz o texto do slide ao trocar idioma ou slide
+  useEffect(() => {
+    if (language !== "pt") {
+      translateText(slides[current].text, language);
+    }
+  }, [language, current]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -62,9 +71,9 @@ export function About() {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="bg-[#F9F9FB] py-20 relative">
+  <section id="ongs" className="bg-[#F9F9FB] py-20 relative">
       <h1 className="text-3xl md:text-4xl font-bold text-center text-[#8C4FA3] mb-16">
-        {loading ? "Traduzindo..." : translated || originalTitle}
+        {loadingTitle ? "Traduzindo..." : translatedTitle || originalTitle}
       </h1>
 
       <div className="container mx-auto relative flex flex-col lg:flex-row items-center gap-12">
@@ -84,19 +93,18 @@ export function About() {
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 w-full lg:w-1/2">
           <div className="bg-[#8C4FA3] text-white p-6 rounded-2xl shadow-md w-full transition-all duration-500">
             <h2 className="text-xl md:text-2xl font-bold mb-2">{slides[current].title}</h2>
-            <p className="text-base md:text-lg">{slides[current].text}</p>
-          </div>
-
-          {/* Indicadores */}
-          <div className="flex gap-2 mt-4 justify-center lg:justify-start">
-            {slides.map((_, index) => (
-              <span
-                key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === current ? "bg-[#FF6F2D] w-6" : "bg-[#CC9AFC]"
-                }`}
-              />
-            ))}
+            <p className="text-base md:text-lg">{language !== "pt" ? (loadingText ? "Traduzindo..." : translatedText) : slides[current].text}</p>
+            {/* Indicadores centralizados logo abaixo do texto */}
+            <div className="flex gap-2 mt-6 justify-center w-full">
+              {slides.map((_, index) => (
+                <span
+                  key={index}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === current ? "bg-[#FF6F2D] w-6" : "bg-[#CC9AFC]"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
